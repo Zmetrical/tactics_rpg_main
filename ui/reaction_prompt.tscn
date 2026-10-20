@@ -1,0 +1,55 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/reaction_prompt.gd" id="2_script"]
+[node name="ReactionPrompt" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+[node name="Panel" type="PanelContainer" parent="Center"]
+custom_minimum_size = Vector2(440, 0)
+layout_mode = 2
+mouse_filter = 0
+[node name="Rows" type="VBoxContainer" parent="Center/Panel"]
+layout_mode = 2
+mouse_filter = 2
+[node name="Title" type="Label" parent="Center/Panel/Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+text = "Reaction"
+[node name="Message" type="Label" parent="Center/Panel/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "Opportunity attack?"
+autowrap_mode = 3
+[node name="Buttons" type="HBoxContainer" parent="Center/Panel/Rows"]
+layout_mode = 2
+mouse_filter = 2
+[node name="Yes" type="Button" parent="Center/Panel/Rows/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "Yes, attack"
+[node name="No" type="Button" parent="Center/Panel/Rows/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "No"

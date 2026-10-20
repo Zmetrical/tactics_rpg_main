@@ -1,0 +1,58 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/active_unit_panel.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/unit_portrait.tscn" id="3_portrait"]
+[ext_resource type="Script" path="res://ui/vitals_bar.gd" id="9_vitals"]
+[node name="ActiveUnitPanel" type="PanelContainer"]
+custom_minimum_size = Vector2(380, 0)
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+[node name="Header" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+mouse_filter = 2
+[node name="Portrait" parent="Rows/Header" instance=ExtResource("3_portrait")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+[node name="Info" type="VBoxContainer" parent="Rows/Header"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+[node name="NameLabel" type="Label" parent="Rows/Header/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+text = "Name"
+[node name="SideTag" type="Label" parent="Rows/Header/Info"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "PLAYER"
+[node name="Vitals" type="Control" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9_vitals")
+[node name="Pips" type="HBoxContainer" parent="Rows"]
+layout_mode = 2
+mouse_filter = 2
+[node name="Ap" type="Label" parent="Rows/Pips"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "AP 0 / 7"
+[node name="Move" type="Label" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "Move 0 / 0"
+[node name="Costs" type="Label" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "Cost 1 / 2.5 / 4.5 AP  |  +2 per turn"

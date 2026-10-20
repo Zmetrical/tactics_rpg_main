@@ -1,0 +1,10 @@
+[gd_resource type="Resource" format=3 uid="uid://cygclpdjfu430"]
+
+[ext_resource type="Script" uid="uid://ei1dbyqx4drt" path="res://scripts/battle/ability.gd" id="1_ability"]
+
+[resource]
+script = ExtResource("1_ability")
+display_name = "Longsword"
+scaling_grade = 3
+damage_dice = "1d8"
+damage_bonus = 3

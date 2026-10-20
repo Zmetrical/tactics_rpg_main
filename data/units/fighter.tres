@@ -1,0 +1,24 @@
+[gd_resource type="Resource" load_steps=7 format=3]
+[ext_resource type="Script" path="res://scripts/battle/unit_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/battle/ability.gd" id="2_ability"]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="3_item"]
+[ext_resource type="Resource" path="res://data/items/longsword.tres" id="i0"]
+[ext_resource type="Resource" path="res://data/items/iron_cuirass.tres" id="i1"]
+[ext_resource type="Resource" path="res://data/items/iron_helm.tres" id="i2"]
+[resource]
+script = ExtResource("1_data")
+display_name = "Fighter"
+max_hp = 32
+ac = 16
+prof = 2
+str_mod = 3
+dex_mod = 1
+con_mod = 2
+int_mod = 0
+wis_mod = 0
+spd = 10
+move = 4
+jump = 1
+discipline_ranks = { &"warrior": 2 }
+abilities = Array[ExtResource("2_ability")]([])
+starting_equipment = Array[ExtResource("3_item")]([ExtResource("i0"), ExtResource("i1"), ExtResource("i2")])

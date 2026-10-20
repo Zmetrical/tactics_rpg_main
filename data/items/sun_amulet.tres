@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="1_item"]
+[resource]
+script = ExtResource("1_item")
+display_name = "Sun Amulet"
+item_type = 6
+handedness = 0
+description = "Warm, somehow."
+magic_barrier = 6

@@ -1,0 +1,49 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/equipment_demo.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/paper_doll.tscn" id="3_doll"]
+[node name="EquipmentDemo" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+[node name="Row" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+[node name="PaperDoll" parent="Margin/Row" instance=ExtResource("3_doll")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+[node name="BagPanel" type="PanelContainer" parent="Margin/Row"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+size_flags_vertical = 0
+[node name="Rows" type="VBoxContainer" parent="Margin/Row/BagPanel"]
+layout_mode = 2
+[node name="Title" type="Label" parent="Margin/Row/BagPanel/Rows"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Bag"
+[node name="Hint" type="Label" parent="Margin/Row/BagPanel/Rows"]
+layout_mode = 2
+text = "Click to equip, or drag onto a slot. Right-click a slot to unequip."
+autowrap_mode = 3
+[node name="Bag" type="VBoxContainer" parent="Margin/Row/BagPanel/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+[node name="Log" type="Label" parent="Margin/Row/BagPanel/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3

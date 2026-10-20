@@ -1,0 +1,154 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://ui/forecast_card.gd" id="1_card"]
+[node name="ForecastCard" type="VBoxContainer"]
+mouse_filter = 2
+script = ExtResource("1_card")
+[node name="Grid" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+columns = 3
+[node name="C00" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C01" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C02" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C10" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C11" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C12" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C20" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C21" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C22" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C30" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C31" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C32" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C40" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C41" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C42" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C50" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C51" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(70, 0)
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="C52" type="Label" parent="Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+custom_minimum_size = Vector2(110, 0)
+text_overrun_behavior = 3
+mouse_filter = 2
+text = "-"
+horizontal_alignment = 1
+[node name="Note" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+horizontal_alignment = 1
+autowrap_mode = 3

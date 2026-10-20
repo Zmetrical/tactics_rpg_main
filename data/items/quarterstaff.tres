@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="1_item"]
+[ext_resource type="Resource" path="res://data/abilities/quarterstaff.tres" id="2_ability"]
+[resource]
+script = ExtResource("1_item")
+display_name = "Quarterstaff"
+item_type = 0
+handedness = 1
+ability = ExtResource("2_ability")
+description = "Two-handed. Locks the Off Hand."

@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/run/reward_screen.gd" id="1_s"]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://ui/hud/hud_divider.gd" id="3_div"]
+[ext_resource type="PackedScene" path="res://ui/equipment_window.tscn" id="4_window"]
+
+[node name="Reward" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_s")
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.784314, 0.815686, 0.752941, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+
+[node name="Box" type="VBoxContainer" parent="Center/Panel"]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="TitleLabel" type="Label" parent="Center/Panel/Box"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Spoils"
+horizontal_alignment = 1
+
+[node name="GoldLabel" type="Label" parent="Center/Panel/Box"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Divider" type="Control" parent="Center/Panel/Box"]
+layout_mode = 2
+script = ExtResource("3_div")
+vertical = false
+
+[node name="Cards" type="VBoxContainer" parent="Center/Panel/Box"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Buttons" type="HBoxContainer" parent="Center/Panel/Box"]
+layout_mode = 2
+alignment = 1
+
+[node name="EquipButton" type="Button" parent="Center/Panel/Box/Buttons"]
+layout_mode = 2
+text = "Equip gear"
+
+[node name="ContinueButton" type="Button" parent="Center/Panel/Box/Buttons"]
+layout_mode = 2
+text = "Continue"
+
+[node name="EquipmentWindow" parent="." instance=ExtResource("4_window")]
+layout_mode = 1

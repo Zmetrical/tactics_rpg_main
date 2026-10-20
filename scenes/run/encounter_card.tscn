@@ -1,0 +1,147 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+
+[sub_resource type="GDScript" id="GDScript_card"]
+script/source = "extends Control
+## The story card shown when the token reaches a room: a framed 1-bit panel (frame_box.gd, the HUD theme's font)
+## with the room type as title, the text typed out, the outcome line and two buttons. Display only: it knows
+## nothing about the run. run_map_view.gd calls show_card() and listens for press_on / turn_back.
+## Typing runs at CHARS_PER_SECOND; any key press shows all the text at once (and every key press is eaten
+## while the card is open, so Q / E / Space do not move the camera under it). The mouse (wheel, pan) still works.
+
+signal press_on
+signal turn_back
+
+const FrameBox = preload(\"res://ui/hud/frame_box.gd\")
+const Palette = preload(\"res://ui/theme/gbc_palette.gd\")
+
+const CHARS_PER_SECOND := 40.0
+const MARGIN_X := 16.0
+const MARGIN_Y := 12.0
+const TEXT_WIDTH := 420.0
+const BOTTOM_GAP := 24.0
+
+@onready var _panel: PanelContainer = $Panel
+@onready var _title: Label = $Panel/Box/Title
+@onready var _text: Label = $Panel/Box/Text
+@onready var _outcome: Label = $Panel/Box/Outcome
+@onready var _press: Button = $Panel/Box/Buttons/PressOn
+@onready var _back: Button = $Panel/Box/Buttons/TurnBack
+
+var _progress := 0.0
+var _typing := false
+
+func _ready() -> void:
+	var box := FrameBox.new()
+	box.face = Palette.PANEL
+	box.edge = Palette.INK
+	box.edge_w = 2
+	box.ring = true
+	box.ring_color = Palette.INK
+	box.set_content_margin(SIDE_LEFT, MARGIN_X)
+	box.set_content_margin(SIDE_RIGHT, MARGIN_X)
+	box.set_content_margin(SIDE_TOP, MARGIN_Y)
+	box.set_content_margin(SIDE_BOTTOM, MARGIN_Y)
+	_panel.add_theme_stylebox_override(\"panel\", box)
+	_panel.offset_bottom = -BOTTOM_GAP
+	_text.custom_minimum_size.x = TEXT_WIDTH
+	# Keys belong to \"show all\" while the card is open, so the buttons are mouse-only (no focus, no Enter).
+	_press.focus_mode = Control.FOCUS_NONE
+	_back.focus_mode = Control.FOCUS_NONE
+	_press.pressed.connect(func() -> void: press_on.emit())
+	_back.pressed.connect(func() -> void: turn_back.emit())
+	visible = false
+	set_process(false)
+
+## Opens the card. The full text is laid out at once (so the card never resizes) and revealed character by character.
+func show_card(title: String, text: String, outcome: String) -> void:
+	_title.text = title.to_upper()
+	_text.text = text
+	_text.visible_characters = 0
+	_outcome.text = outcome
+	_outcome.modulate.a = 0.0
+	_progress = 0.0
+	_typing = true
+	visible = true
+	set_process(true)
+
+func is_typing() -> bool:
+	return _typing
+
+## Shows all the text and the outcome line now.
+func finish_typing() -> void:
+	_typing = false
+	_text.visible_characters = -1
+	_outcome.modulate.a = 1.0
+	set_process(false)
+
+func visible_text() -> String:
+	return _text.text.substr(0, _text.get_total_character_count() if _text.visible_characters < 0 else _text.visible_characters)
+
+func _process(delta: float) -> void:
+	_progress += CHARS_PER_SECOND * delta
+	_text.visible_characters = int(_progress)
+	if _text.visible_characters >= _text.get_total_character_count():
+		finish_typing()
+
+func _input(event: InputEvent) -> void:
+	if not visible:
+		return
+	if event is InputEventKey and event.pressed and not event.echo:
+		if _typing:
+			finish_typing()
+		get_viewport().set_input_as_handled()
+"
+
+[node name="EncounterCard" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_theme")
+script = SubResource("GDScript_card")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Box" type="VBoxContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Panel/Box"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="Panel/Box"]
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Outcome" type="Label" parent="Panel/Box"]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+
+[node name="Buttons" type="HBoxContainer" parent="Panel/Box"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="PressOn" type="Button" parent="Panel/Box/Buttons"]
+layout_mode = 2
+text = "PRESS ON"
+
+[node name="TurnBack" type="Button" parent="Panel/Box/Buttons"]
+layout_mode = 2
+text = "TURN BACK"

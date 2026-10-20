@@ -1,0 +1,37 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/hud/target_panel.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/hud/unit_panel_3d.tscn" id="3_panel"]
+[node name="TargetPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Panel" parent="." instance=ExtResource("3_panel")]
+unique_name_in_owner = true
+layout_mode = 0
+[node name="Buttons" type="HBoxContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_right = 280.0
+offset_bottom = 44.0
+mouse_filter = 2
+theme_override_constants/separation = 8
+[node name="Confirm" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(136, 44)
+layout_mode = 2
+focus_mode = 0
+text = "▶ CONFIRM"
+[node name="Cancel" type="Button" parent="Buttons"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(136, 44)
+layout_mode = 2
+focus_mode = 0
+text = "  CANCEL"

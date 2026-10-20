@@ -1,0 +1,19 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://ui/unit_portrait.gd" id="1_portrait"]
+[node name="UnitPortrait" type="ColorRect"]
+custom_minimum_size = Vector2(48, 48)
+mouse_filter = 2
+script = ExtResource("1_portrait")
+[node name="Letter" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+theme_override_font_sizes/font_size = 32
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,81 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/hud/forecast_box.gd" id="2_script"]
+[node name="ForecastBox" type="PanelContainer"]
+custom_minimum_size = Vector2(460, 0)
+size_flags_horizontal = 4
+mouse_filter = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+[node name="FcTitle" type="Label" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "ABILITY"
+horizontal_alignment = 1
+clip_text = true
+[node name="TitleSep" type="HSeparator" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+[node name="Numbers" type="VBoxContainer" parent="Rows"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 1
+[node name="FcHit" type="Label" parent="Rows/Numbers"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HIT 0%"
+horizontal_alignment = 1
+[node name="FcCrit" type="Label" parent="Rows/Numbers"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "CRIT 0%"
+horizontal_alignment = 1
+[node name="FcDmg" type="Label" parent="Rows/Numbers"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "DMG 0-0"
+horizontal_alignment = 1
+[node name="FcHp" type="Label" parent="Rows/Numbers"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "HP 0 > 0 (-0)"
+horizontal_alignment = 1
+[node name="FcSep" type="HSeparator" parent="Rows"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+[node name="FcFoot" type="Label" parent="Rows"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+horizontal_alignment = 1
+clip_text = true
+[node name="LockRow" type="HBoxContainer" parent="Rows"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 1
+[node name="LockTile" type="Button" parent="Rows/LockRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+button_pressed = true
+text = "TILE"
+[node name="LockUnit" type="Button" parent="Rows/LockRow"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(84, 0)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+text = "UNIT"

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=6 format=3]
+[ext_resource type="Script" path="res://scripts/battle/unit_data.gd" id="1_data"]
+[ext_resource type="Script" path="res://scripts/battle/ability.gd" id="2_ability"]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="3_item"]
+[ext_resource type="Resource" path="res://data/items/goblin_blade.tres" id="i0"]
+[ext_resource type="Resource" path="res://data/items/leather_brace.tres" id="i1"]
+[resource]
+script = ExtResource("1_data")
+display_name = "Goblin"
+max_hp = 12
+ac = 13
+prof = 2
+str_mod = 0
+dex_mod = 2
+con_mod = 0
+int_mod = 0
+wis_mod = 0
+spd = 11
+move = 4
+jump = 1
+abilities = Array[ExtResource("2_ability")]([])
+starting_equipment = Array[ExtResource("3_item")]([ExtResource("i0"), ExtResource("i1")])

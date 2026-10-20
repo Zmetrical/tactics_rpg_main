@@ -1,0 +1,21 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/charge_tracker.gd" id="2_script"]
+[node name="ChargeTracker" type="PanelContainer"]
+visible = false
+custom_minimum_size = Vector2(380, 0)
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+[node name="Title" type="Label" parent="Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+text = "Charging spells"
+[node name="Entries" type="VBoxContainer" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2

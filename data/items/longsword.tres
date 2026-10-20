@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://byni5ey4ux633"]
+
+[ext_resource type="Script" uid="uid://sym2fm83jyjc" path="res://scripts/inventory/item.gd" id="1_item"]
+[ext_resource type="Resource" uid="uid://cygclpdjfu430" path="res://data/abilities/longsword.tres" id="2_ability"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Longsword"
+ability = ExtResource("2_ability")
+description = "One-handed. Dual-wieldable."
+req_str = 1

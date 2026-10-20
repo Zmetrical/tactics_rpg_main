@@ -1,0 +1,29 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://ui/turn_chip.gd" id="1_chip"]
+[ext_resource type="PackedScene" path="res://ui/unit_portrait.tscn" id="2_portrait"]
+[node name="TurnChip" type="PanelContainer"]
+mouse_filter = 2
+theme_type_variation = &"InnerPanel"
+script = ExtResource("1_chip")
+[node name="Rows" type="VBoxContainer" parent="."]
+layout_mode = 2
+mouse_filter = 2
+[node name="Marker" type="Label" parent="Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+text = "NOW"
+horizontal_alignment = 1
+[node name="Portrait" parent="Rows" instance=ExtResource("2_portrait")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+[node name="NameLabel" type="Label" parent="Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(72, 0)
+layout_mode = 2
+mouse_filter = 2
+text = "Name"
+horizontal_alignment = 1
+text_overrun_behavior = 3

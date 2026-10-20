@@ -1,0 +1,22 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/paper_doll.gd" id="2_script"]
+[node name="PaperDoll" type="PanelContainer"]
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Rows" type="VBoxContainer" parent="."]
+theme_override_constants/separation = 14
+layout_mode = 2
+mouse_filter = 2
+[node name="Title" type="Label" parent="Rows"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+text = "Equipment"
+[node name="Doll" type="Control" parent="Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(396, 332)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2

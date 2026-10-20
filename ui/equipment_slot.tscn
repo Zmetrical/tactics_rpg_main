@@ -1,0 +1,32 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/equipment_slot.gd" id="2_script"]
+[node name="EquipmentSlot" type="PanelContainer"]
+custom_minimum_size = Vector2(160, 88)
+mouse_filter = 0
+theme = ExtResource("1_theme")
+theme_type_variation = &"InnerPanel"
+script = ExtResource("2_script")
+[node name="Icon" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+stretch_mode = 5
+[node name="Label" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+size_flags_vertical = 3
+text = "Slot"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+[node name="Lock" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+mouse_filter = 2
+text = "LOCKED"
+horizontal_alignment = 1
+vertical_alignment = 1

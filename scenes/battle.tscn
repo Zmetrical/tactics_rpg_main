@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://baymdmaq4ucp0"]
+
+[ext_resource type="Script" uid="uid://ig7061cjl5ib" path="res://scripts/battle/battle_view.gd" id="1_view"]
+[ext_resource type="Script" uid="uid://dpjbihn62g52l" path="res://scripts/battle/stage_3d.gd" id="2_stage"]
+[ext_resource type="Theme" uid="uid://b13buca2qhtpo" path="res://ui/theme/tactics_theme.tres" id="3_theme"]
+[ext_resource type="PackedScene" path="res://ui/turn_order_bar.tscn" id="4_turnbar"]
+[ext_resource type="PackedScene" path="res://ui/charge_tracker.tscn" id="6_tracker"]
+[ext_resource type="PackedScene" path="res://ui/battle_banner.tscn" id="11_banner"]
+[ext_resource type="PackedScene" path="res://ui/reaction_prompt.tscn" id="12_reaction"]
+[ext_resource type="PackedScene" uid="uid://cwolxvtlkib44" path="res://ui/equipment_window.tscn" id="13_equipwin"]
+[ext_resource type="PackedScene" path="res://ui/hud/unit_panel_3d.tscn" id="20_unitpanel"]
+[ext_resource type="PackedScene" path="res://ui/hud/target_panel.tscn" id="21_target"]
+[ext_resource type="PackedScene" path="res://ui/hud/hotbar.tscn" id="22_hotbar"]
+[ext_resource type="PackedScene" path="res://ui/hud/battle_log.tscn" id="23_log"]
+[ext_resource type="PackedScene" path="res://ui/hud/hover_preview.tscn" id="24_hover"]
+[ext_resource type="Script" uid="uid://b2g8lnoh6b0c3" path="res://ui/hud/battle_ui.gd" id="25_ui"]
+[ext_resource type="PackedScene" path="res://ui/hud/forecast_box.tscn" id="26_forecast"]
+
+[node name="Battle" type="Node3D" unique_id=1568606838]
+script = ExtResource("1_view")
+
+[node name="Stage" type="Node3D" parent="." unique_id=1269169693]
+script = ExtResource("2_stage")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1822328473]
+
+[node name="WorldPanels" type="Control" parent="UI" unique_id=1023222361]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ActiveUnitPanel" parent="UI/WorldPanels" unique_id=1548486141 instance=ExtResource("20_unitpanel")]
+unique_name_in_owner = true
+layout_mode = 0
+preferred_side = 1
+
+[node name="HoverPreview" parent="UI/WorldPanels" unique_id=230107247 instance=ExtResource("24_hover")]
+unique_name_in_owner = true
+layout_mode = 0
+
+[node name="TargetPanel" parent="UI/WorldPanels" unique_id=2080907804 instance=ExtResource("21_target")]
+unique_name_in_owner = true
+layout_mode = 1
+
+[node name="HUD" type="MarginContainer" parent="UI" unique_id=1831392918]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("3_theme")
+
+[node name="Rows" type="VBoxContainer" parent="UI/HUD" unique_id=911678738]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TopRow" type="HBoxContainer" parent="UI/HUD/Rows" unique_id=1610790622]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LeftColumn" type="VBoxContainer" parent="UI/HUD/Rows/TopRow" unique_id=1879707698]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="TurnOrderBar" parent="UI/HUD/Rows/TopRow/LeftColumn" unique_id=1383078866 instance=ExtResource("4_turnbar")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="MapInfoGap" type="Control" parent="UI/HUD/Rows/TopRow" unique_id=486798719]
+custom_minimum_size = Vector2(560, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RightColumn" type="VBoxContainer" parent="UI/HUD/Rows/TopRow" unique_id=184872443]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="ChargeTracker" parent="UI/HUD/Rows/TopRow/RightColumn" unique_id=175742728 instance=ExtResource("6_tracker")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="Spacer" type="Control" parent="UI/HUD/Rows" unique_id=1146918598]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BottomRow" type="HBoxContainer" parent="UI/HUD/Rows" unique_id=1031587900]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="BottomLeft" type="Control" parent="UI/HUD/Rows/BottomRow" unique_id=1139285826]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="BottomCenter" type="VBoxContainer" parent="UI/HUD/Rows/BottomRow" unique_id=1861912936]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="ForecastBox" parent="UI/HUD/Rows/BottomRow/BottomCenter" unique_id=99925837 instance=ExtResource("26_forecast")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BattleLog" parent="UI/HUD/Rows/BottomRow/BottomCenter" unique_id=1488447543 instance=ExtResource("23_log")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Hotbar" parent="UI/HUD/Rows/BottomRow/BottomCenter" unique_id=1193961256 instance=ExtResource("22_hotbar")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BottomRight" type="VBoxContainer" parent="UI/HUD/Rows/BottomRow" unique_id=1130231405]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 2
+
+[node name="BattleBanner" parent="UI" unique_id=979327688 instance=ExtResource("11_banner")]
+unique_name_in_owner = true
+
+[node name="ReactionPrompt" parent="UI" unique_id=221798040 instance=ExtResource("12_reaction")]
+unique_name_in_owner = true
+
+[node name="EquipmentWindow" parent="UI" unique_id=587718896 instance=ExtResource("13_equipwin")]
+unique_name_in_owner = true
+
+[node name="BattleUI" type="Node" parent="." unique_id=502845836]
+unique_name_in_owner = true
+script = ExtResource("25_ui")

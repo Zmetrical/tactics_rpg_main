@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="1_item"]
+[resource]
+script = ExtResource("1_item")
+display_name = "Iron Greaves"
+item_type = 3
+handedness = 0
+description = "Shin and knee guards."
+physical_armor = 4
+req_str = 1

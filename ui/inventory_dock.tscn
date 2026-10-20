@@ -1,0 +1,36 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/inventory_dock.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/paper_doll.tscn" id="3_doll"]
+[node name="InventoryDock" type="PanelContainer"]
+custom_minimum_size = Vector2(340, 200)
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Scroll" type="ScrollContainer" parent="."]
+custom_minimum_size = Vector2(320, 184)
+layout_mode = 2
+size_flags_vertical = 3
+[node name="Rows" type="VBoxContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+[node name="Status" type="Label" parent="Scroll/Rows"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+mouse_filter = 2
+autowrap_mode = 3
+[node name="PaperDoll" parent="Scroll/Rows" instance=ExtResource("3_doll")]
+unique_name_in_owner = true
+layout_mode = 2
+[node name="BagTitle" type="Label" parent="Scroll/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"TitleLabel"
+text = "Bag"
+[node name="BagList" type="VBoxContainer" parent="Scroll/Rows"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3

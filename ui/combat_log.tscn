@@ -1,0 +1,13 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/combat_log.gd" id="2_script"]
+[node name="CombatLog" type="PanelContainer"]
+custom_minimum_size = Vector2(380, 0)
+mouse_filter = 0
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+[node name="Log" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 152)
+layout_mode = 2
+scroll_following = true

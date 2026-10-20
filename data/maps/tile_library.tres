@@ -1,0 +1,77 @@
+[gd_resource type="MeshLibrary" format=3 uid="uid://dw3u24gh2spv5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed2nm"]
+albedo_color = Color(0.35, 0.6, 0.35, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wp52p"]
+material = SubResource("StandardMaterial3D_ed2nm")
+size = Vector3(1, 0.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lkmh3"]
+albedo_color = Color(0.55, 0.65, 0.35, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5nwe"]
+material = SubResource("StandardMaterial3D_lkmh3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw41i"]
+albedo_color = Color(0.72, 0.66, 0.4, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_g6nbh"]
+material = SubResource("StandardMaterial3D_cw41i")
+size = Vector3(1, 1.5, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2f7l"]
+albedo_color = Color(0.82, 0.72, 0.52, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_symgk"]
+material = SubResource("StandardMaterial3D_q2f7l")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jblmc"]
+albedo_color = Color(0.5, 0.5, 0.56, 1)
+metallic_specular = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_gt1px"]
+material = SubResource("StandardMaterial3D_jblmc")
+size = Vector3(1, 1.5, 1)
+
+[resource]
+item/0/name = "height_0"
+item/0/mesh = SubResource("BoxMesh_wp52p")
+item/0/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+item/0/mesh_cast_shadow = 1
+item/0/shapes = []
+item/0/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/0/navigation_layers = 1
+item/1/name = "height_1"
+item/1/mesh = SubResource("BoxMesh_o5nwe")
+item/1/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/mesh_cast_shadow = 1
+item/1/shapes = []
+item/1/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/1/navigation_layers = 1
+item/2/name = "height_2"
+item/2/mesh = SubResource("BoxMesh_g6nbh")
+item/2/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+item/2/mesh_cast_shadow = 1
+item/2/shapes = []
+item/2/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/2/navigation_layers = 1
+item/3/name = "height_3"
+item/3/mesh = SubResource("BoxMesh_symgk")
+item/3/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+item/3/mesh_cast_shadow = 1
+item/3/shapes = []
+item/3/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/3/navigation_layers = 1
+item/4/name = "wall"
+item/4/mesh = SubResource("BoxMesh_gt1px")
+item/4/mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+item/4/mesh_cast_shadow = 1
+item/4/shapes = []
+item/4/navigation_mesh_transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+item/4/navigation_layers = 1

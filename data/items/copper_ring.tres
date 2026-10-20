@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="1_item"]
+[resource]
+script = ExtResource("1_item")
+display_name = "Copper Ring"
+item_type = 5
+handedness = 0
+description = "A plain band."
+magic_barrier = 2

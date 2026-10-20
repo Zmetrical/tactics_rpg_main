@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://ui/hud/hover_preview.gd" id="1_script"]
+[ext_resource type="PackedScene" path="res://ui/hud/unit_panel_3d.tscn" id="2_panel"]
+[node name="HoverPreview" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+mouse_filter = 2
+script = ExtResource("1_script")
+[node name="Panel" parent="." instance=ExtResource("2_panel")]
+unique_name_in_owner = true
+layout_mode = 0

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item.gd" id="1_item"]
+[resource]
+script = ExtResource("1_item")
+display_name = "Silver Ring"
+item_type = 5
+handedness = 0
+description = "Cold to the touch."
+magic_barrier = 3

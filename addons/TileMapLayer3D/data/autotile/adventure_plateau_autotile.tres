@@ -1,0 +1,71 @@
+[gd_resource type="TileSet" format=3 uid="uid://dwie1r46w6e36"]
+
+[ext_resource type="Texture2D" uid="uid://dtp6onqsvs4rh" path="res://art/tilesets/adventure_begins/AdventureBegins_Demo.png" id="1_tex"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_plateau"]
+texture = ExtResource("1_tex")
+13:3/0 = 0
+14:3/0 = 0
+15:3/0 = 0
+14:4/0 = 0
+15:5/0 = 0
+15:4/0 = 0
+14:5/0 = 0
+13:5/0 = 0
+14:6/0 = 0
+12:5/0 = 0
+12:6/0 = 0
+13:6/0 = 0
+13:4/0 = 0
+11:5/0 = 0
+11:6/0 = 0
+11:7/0 = 0
+11:8/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+14:9/0 = 0
+15:8/0 = 0
+15:7/0 = 0
+15:6/0 = 0
+12:4/0 = 0
+11:4/0 = 0
+10:5/0 = 0
+9:6/0 = 0
+9:7/0 = 0
+8:8/0 = 0
+8:9/0 = 0
+8:10/0 = 0
+8:11/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:13/0 = 0
+11:13/0 = 0
+12:13/0 = 0
+13:13/0 = 0
+14:12/0 = 0
+15:12/0 = 0
+16:11/0 = 0
+16:10/0 = 0
+17:9/0 = 0
+17:8/0 = 0
+16:8/0 = 0
+14:7/0 = 0
+13:7/0 = 0
+12:8/0 = 0
+10:9/0 = 0
+9:10/0 = 0
+7:12/0 = 0
+6:13/0 = 0
+5:14/0 = 0
+
+[resource]
+terrain_set_0/mode = 0
+custom_data_layer_0/name = "Animated"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "VariantTile"
+custom_data_layer_1/type = 6
+custom_data_layer_2/name = "CollectionTiles"
+custom_data_layer_2/type = 35
+custom_data_layer_3/name = "Collision"
+custom_data_layer_3/type = 1
+sources/0 = SubResource("TileSetAtlasSource_plateau")

@@ -1,0 +1,142 @@
+[gd_scene format=3 uid="uid://cwolxvtlkib44"]
+
+[ext_resource type="Theme" uid="uid://b13buca2qhtpo" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" uid="uid://c1bqt3c87er5n" path="res://ui/equipment_window.gd" id="2_script"]
+[ext_resource type="PackedScene" path="res://ui/paper_doll.tscn" id="3_doll"]
+[ext_resource type="Script" uid="uid://dvpy48ey7i040" path="res://ui/vitals_bar.gd" id="9_vitals"]
+[ext_resource type="Script" uid="uid://cc2t3e7bbe8ky" path="res://ui/bag_grid.gd" id="10_grid"]
+
+[node name="EquipmentWindow" type="Control" unique_id=267091309]
+visible = false
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")
+
+[node name="Dim" type="ColorRect" parent="." unique_id=1091043790]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Center" type="CenterContainer" parent="." unique_id=437481183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Window" type="PanelContainer" parent="Center" unique_id=1027857251]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="Center/Window" unique_id=964839680]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Header" type="HBoxContainer" parent="Center/Window/Rows" unique_id=1749947340]
+layout_mode = 2
+
+[node name="UnitName" type="Label" parent="Center/Window/Rows/Header" unique_id=435392222]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Unit"
+
+[node name="SideTag" type="Label" parent="Center/Window/Rows/Header" unique_id=540407813]
+unique_name_in_owner = true
+layout_mode = 2
+text = "PLAYER"
+
+[node name="Spacer" type="Control" parent="Center/Window/Rows/Header" unique_id=1110466084]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Close" type="Button" parent="Center/Window/Rows/Header" unique_id=1036562795]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Close (I)"
+
+[node name="UnitTabs" type="HBoxContainer" parent="Center/Window/Rows" unique_id=1430714519]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Body" type="HBoxContainer" parent="Center/Window/Rows" unique_id=626946089]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="StatsPanel" type="PanelContainer" parent="Center/Window/Rows/Body" unique_id=1068245547]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+
+[node name="StatsRows" type="VBoxContainer" parent="Center/Window/Rows/Body/StatsPanel" unique_id=2064567268]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="StatsTitle" type="Label" parent="Center/Window/Rows/Body/StatsPanel/StatsRows" unique_id=1961836444]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Stats"
+
+[node name="Vitals" type="Control" parent="Center/Window/Rows/Body/StatsPanel/StatsRows" unique_id=1372654520]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("9_vitals")
+
+[node name="AbilityGrid" type="GridContainer" parent="Center/Window/Rows/Body/StatsPanel/StatsRows" unique_id=921249401]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/v_separation = 6
+columns = 5
+
+[node name="StatGrid" type="GridContainer" parent="Center/Window/Rows/Body/StatsPanel/StatsRows" unique_id=1646404658]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/v_separation = 6
+columns = 6
+
+[node name="Abilities" type="VBoxContainer" parent="Center/Window/Rows/Body/StatsPanel/StatsRows" unique_id=1670654976]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(320, 0)
+layout_mode = 2
+
+[node name="PaperDoll" parent="Center/Window/Rows/Body" unique_id=987032345 instance=ExtResource("3_doll")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="BagPanel" type="PanelContainer" parent="Center/Window/Rows/Body" unique_id=1205449910]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(352, 0)
+layout_mode = 2
+
+[node name="BagRows" type="VBoxContainer" parent="Center/Window/Rows/Body/BagPanel" unique_id=2019892825]
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BagTitle" type="Label" parent="Center/Window/Rows/Body/BagPanel/BagRows" unique_id=307151991]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Bag"
+
+[node name="BagGrid" type="Control" parent="Center/Window/Rows/Body/BagPanel/BagRows" unique_id=872145440]
+unique_name_in_owner = true
+layout_mode = 2
+script = ExtResource("10_grid")
+
+[node name="Status" type="Label" parent="Center/Window/Rows" unique_id=180223717]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+autowrap_mode = 3

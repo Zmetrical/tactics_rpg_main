@@ -1,0 +1,15 @@
+[gd_resource type="Resource" load_steps=2 format=3]
+[ext_resource type="Script" path="res://scripts/battle/ability.gd" id="1_ability"]
+[resource]
+script = ExtResource("1_ability")
+display_name = "Quarterstaff"
+slot_level = 0
+range_tiles = 1
+area_radius = 0
+roll = 0
+stat = 0
+save_stat = 1
+damage_dice = "1d6"
+accuracy = 80
+damage_bonus = 0
+scaling_grade = 1

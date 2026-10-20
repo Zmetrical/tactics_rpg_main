@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/run/stub_screen.gd" id="1_s"]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="2_theme"]
+[ext_resource type="Script" path="res://ui/hud/hud_divider.gd" id="3_div"]
+
+[node name="Title" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_s")
+title_text = "TACTICS RPG"
+button_text = "Start"
+next_state = "map"
+starts_run = true
+
+[node name="Bg" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.784314, 0.815686, 0.752941, 1)
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="Center"]
+layout_mode = 2
+
+[node name="Box" type="VBoxContainer" parent="Center/Panel"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Label" type="Label" parent="Center/Panel/Box"]
+layout_mode = 2
+theme_type_variation = &"BannerLabel"
+horizontal_alignment = 1
+
+[node name="Divider" type="Control" parent="Center/Panel/Box"]
+layout_mode = 2
+script = ExtResource("3_div")
+vertical = false
+
+[node name="Button" type="Button" parent="Center/Panel/Box"]
+layout_mode = 2

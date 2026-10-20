@@ -1,0 +1,7 @@
+[gd_scene format=3]
+[ext_resource type="Theme" path="res://ui/theme/tactics_theme.tres" id="1_theme"]
+[ext_resource type="Script" path="res://ui/hud/hotbar.gd" id="2_script"]
+[node name="Hotbar" type="VBoxContainer"]
+mouse_filter = 2
+theme = ExtResource("1_theme")
+script = ExtResource("2_script")

@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://y1mwb86tobd0"]
+
+[ext_resource type="Script" uid="uid://bpno6n3svfj2p" path="res://scripts/run/run_map_view.gd" id="1_view"]
+[ext_resource type="Theme" uid="uid://b13buca2qhtpo" path="res://ui/theme/tactics_theme.tres" id="2_theme"]
+[ext_resource type="Script" uid="uid://drlopaild845p" path="res://scripts/run/map_top_bar.gd" id="3_bar"]
+[ext_resource type="Script" uid="uid://dixg4wvf1a368" path="res://ui/hud/hud_divider.gd" id="4_divider"]
+[ext_resource type="PackedScene" uid="uid://cwolxvtlkib44" path="res://ui/equipment_window.tscn" id="5_window"]
+
+[sub_resource type="Environment" id="Environment_map"]
+background_mode = 1
+background_color = Color(0.746667, 0.803137, 0.934902, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.58, 0.64, 0.8, 1)
+ambient_light_energy = 0.6
+tonemap_mode = 2
+fog_enabled = true
+fog_light_color = Color(0.746667, 0.803137, 0.934902, 1)
+fog_density = 0.006
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 1.15
+
+[node name="RunMapView" type="Node3D" unique_id=1204506116]
+script = ExtResource("1_view")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1181379505]
+environment = SubResource("Environment_map")
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1996298222]
+
+[node name="CameraRig" type="Node3D" parent="." unique_id=1699090132]
+
+[node name="Camera" type="Camera3D" parent="CameraRig" unique_id=238220088]
+current = true
+fov = 30.0
+near = 0.5
+far = 200.0
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=1924355570]
+
+[node name="TopBar" type="PanelContainer" parent="UI" unique_id=2064397857]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+grow_horizontal = 2
+theme = ExtResource("2_theme")
+script = ExtResource("3_bar")
+
+[node name="Row" type="HBoxContainer" parent="UI/TopBar" unique_id=235957781]
+layout_mode = 2
+
+[node name="Party" type="HBoxContainer" parent="UI/TopBar/Row" unique_id=879816139]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Divider" type="Control" parent="UI/TopBar/Row" unique_id=120244753]
+layout_mode = 2
+script = ExtResource("4_divider")
+
+[node name="GoldLabel" type="Label" parent="UI/TopBar/Row" unique_id=1229923585]
+layout_mode = 2
+theme_type_variation = &"TitleLabel"
+text = "Gold 0"
+
+[node name="SkipButton" type="Button" parent="UI/TopBar/Row" unique_id=950180581]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="EquipmentWindow" parent="UI" unique_id=2030464741 instance=ExtResource("5_window")]

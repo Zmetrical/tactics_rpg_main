@@ -1,0 +1,11 @@
+[gd_resource type="Resource" format=3 uid="uid://bdilf1qvwkjcj"]
+
+[ext_resource type="Script" uid="uid://sym2fm83jyjc" path="res://scripts/inventory/item.gd" id="1_item"]
+
+[resource]
+script = ExtResource("1_item")
+display_name = "Iron Cuirass"
+item_type = 2
+description = "Heavy plate for the chest."
+physical_armor = 8
+req_str = 1

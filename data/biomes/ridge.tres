@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=3]
+[ext_resource type="Script" path="res://scripts/battle/biome_data.gd" id="1_biome"]
+[ext_resource type="Resource" path="res://data/units/goblin.tres" id="3"]
+[ext_resource type="Resource" path="res://data/units/goblin_archer.tres" id="4"]
+[ext_resource type="Resource" path="res://data/units/orc.tres" id="5"]
+[resource]
+script = ExtResource("1_biome")
+enemy_roster = Array[Resource]([ExtResource("4"), ExtResource("4"), ExtResource("3"), ExtResource("5")])
+enemy_count_min = 3
+enemy_count_max = 4
